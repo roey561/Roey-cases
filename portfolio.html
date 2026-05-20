@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>CreatorOps AI · AI业务流程优化作品集</title>
+<style>
+/* ── Print & Page Setup ── */
+@page {
+  size: A4;
+  margin: 14mm 16mm 16mm 16mm;
+  @bottom-center {
+    content: "CreatorOps AI · AI 业务流程优化作品集　　　　　　第 " counter(page) " 页";
+    font-family: "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
+    font-size: 7pt;
+    color: #94a3b8;
+    border-top: 0.4px solid #e2e8f0;
+    padding-top: 3mm;
+  }
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Noto Sans CJK SC", "Microsoft YaHei", "PingFang SC", sans-serif;
+  font-size: 8.5pt;
+  line-height: 1.55;
+  color: #1a202c;
+  background: #fff;
+}
+
+/* ── Color Variables ── */
+:root {
+  --accent:   #4F8EF7;
+  --accent2:  #7C5CFC;
+  --teal:     #2DD4BF;
+  --green:    #38a169;
+  --red:      #e53e3e;
+  --navy:     #0F1923;
+  --text:     #1a202c;
+  --sub:      #4a5568;
+  --light:    #718096;
+  --bg:       #f7f9fc;
+  --bg-blue:  #EDF2FF;
+  --border:   #e2e8f0;
+}
+
+/* ── PAGE BREAK CONTROL ── */
+.page-break { page-break-after: always; }
+.no-break   { page-break-inside: avoid; }
+
+/* ════════════════════════════════
+   HERO BLOCK
+════════════════════════════════ */
+.hero {
+  background: linear-gradient(135deg, #0F1923 0%, #162438 60%, #1a3a5c 100%);
+  color: #fff;
+  padding: 9mm 0 7mm;
+  margin: -14mm -16mm 0 -16mm;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 80mm; height: 80mm;
+  border-radius: 50%;
+  background: rgba(79,142,247,0.07);
+  right: -20mm; top: -20mm;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 50mm; height: 50mm;
+  border-radius: 50%;
+  background: rgba(124,92,252,0.06);
+  right: 15mm; bottom: -15mm;
+}
+.hero-inner { padding: 0 16mm; position: relative; z-index: 1; }
+
+.hero-tag {
+  display: inline-block;
+  background: rgba(45,212,191,0.15);
+  color: #2DD4BF;
+  border: 1px solid rgba(45,212,191,0.3);
+  font-size: 6.5pt;
+  padding: 1.5mm 4mm;
+  border-radius: 20px;
+  margin-bottom: 3mm;
+  letter-spacing: 0.5px;
+}
+
+.hero h1 {
+  font-size: 22pt;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+  background: linear-gradient(90deg, #fff 60%, #a0c4ff);
+  -webkit-background-clip: text;
+  color: #fff;
+}
+
+.hero-sub {
+  color: #90b8d8;
+  font-size: 9.5pt;
+  font-weight: 300;
+  margin-top: 1.5mm;
+}
+
+.hero-accent-bar {
+  width: 32mm; height: 2.5px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  margin: 4mm 0;
+  border-radius: 2px;
+}
+
+.hero-meta {
+  display: flex;
+  gap: 8mm;
+  margin-top: 4mm;
+}
+.hero-meta-item { display: flex; flex-direction: column; }
+.hero-meta-item .label {
+  font-size: 6pt;
+  color: #5a8aae;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+.hero-meta-item .val {
+  font-size: 7.5pt;
+  color: #c8e0f8;
+  font-weight: 500;
+  margin-top: 0.5mm;
+}
+
+/* ════════════════════════════════
+   SECTION HEADERS
+════════════════════════════════ */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 3mm;
+  margin: 6mm 0 3mm;
+  page-break-after: avoid;
+}
+.section-header .bar {
+  width: 3px;
+  height: 14px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.section-header .bar.blue  { background: var(--accent); }
+.section-header .bar.purple{ background: var(--accent2); }
+.section-header .bar.teal  { background: var(--teal); }
+.section-header .bar.green { background: var(--green); }
+.section-header .titles {}
+.section-header h2 {
+  font-size: 11pt;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.2;
+}
+.section-header .sub-title {
+  font-size: 6.5pt;
+  color: var(--light);
+  margin-top: 0.5mm;
+}
+
+/* ════════════════════════════════
+   STAR GRID
+════════════════════════════════ */
+.star-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3mm;
+  margin: 2mm 0 4mm;
+}
+.star-card {
+  border-top: 2.5px solid;
+  padding: 4mm 5mm;
+  border-radius: 0 0 4px 4px;
+}
+.star-card.s { border-color: var(--accent);  background: var(--bg-blue); }
+.star-card.t { border-color: var(--accent2); background: #f5f0ff; }
+.star-card.a { border-color: var(--teal);    background: #f0fffd; }
+.star-card.r { border-color: var(--green);   background: #f0fff4; }
+.star-card .card-title {
+  font-size: 7.5pt;
+  font-weight: 700;
+  margin-bottom: 2mm;
+}
+.star-card .card-title .letter {
+  font-size: 8.5pt;
+  font-weight: 800;
+  margin-right: 1.5mm;
+}
+.star-card.s .card-title .letter { color: var(--accent); }
+.star-card.t .card-title .letter { color: var(--accent2); }
+.star-card.a .card-title .letter { color: var(--teal); }
+.star-card.r .card-title .letter { color: var(--green); }
+.star-card p { font-size: 7.5pt; color: var(--sub); line-height: 1.5; }
+
+/* ════════════════════════════════
+   METRICS ROW
+════════════════════════════════ */
+.metrics-row {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 3mm;
+  margin: 2mm 0 4mm;
+}
+.metric-card {
+  background: var(--bg-blue);
+  border-radius: 5px;
+  padding: 4mm 3mm;
+  text-align: center;
+}
+.metric-card .value {
+  font-size: 14pt;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+}
+.metric-card .mlabel {
+  font-size: 6.5pt;
+  color: var(--sub);
+  margin-top: 2mm;
+  line-height: 1.3;
+}
+
+/* ════════════════════════════════
+   WORKFLOW DIAGRAM
+════════════════════════════════ */
+.workflow {
+  margin: 3mm 0;
+  page-break-inside: avoid;
+}
+.wf-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2mm;
+  margin: 1.5mm 0;
+}
+.wf-arrow-v {
+  text-align: center;
+  color: #cbd5e0;
+  font-size: 10pt;
+  line-height: 1;
+  margin: 0.5mm 0;
+}
+.wf-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  padding: 2.5mm 3mm;
+  min-width: 36mm;
+  max-width: 42mm;
+  text-align: center;
+  color: #fff;
+  font-size: 6.5pt;
+  line-height: 1.3;
+  font-weight: 600;
+}
+.wf-node .node-sub {
+  font-size: 5.5pt;
+  font-weight: 400;
+  color: rgba(255,255,255,0.75);
+  margin-top: 1mm;
+}
+.wf-arrow-h { color: #cbd5e0; font-size: 9pt; flex-shrink: 0; }
+
+.n-dark   { background: #4a5568; }
+.n-blue   { background: #2a69ac; }
+.n-purple { background: #553c9a; }
+.n-teal   { background: #2c7a7b; }
+.n-green  { background: #276749; }
+.n-orange { background: #b7791f; }
+.n-red    { background: #c53030; }
+
+/* ════════════════════════════════
+   NODE DETAIL CARDS
+════════════════════════════════ */
+.node-details { margin: 3mm 0; }
+.node-detail-row {
+  display: grid;
+  grid-template-columns: 30mm 1fr;
+  margin-bottom: 2mm;
+  border: 0.5px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  page-break-inside: avoid;
+}
+.nd-label {
+  background: var(--bg-blue);
+  padding: 4mm 4mm;
+  font-size: 7pt;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.4;
+  border-top: 2.5px solid var(--accent);
+}
+.nd-label.purple { border-top-color: var(--accent2); background: #f5f0ff; }
+.nd-label.teal   { border-top-color: var(--teal); background: #f0fffd; }
+.nd-body {
+  background: var(--bg);
+  padding: 4mm 5mm;
+  font-size: 7.5pt;
+  color: var(--sub);
+  line-height: 1.5;
+}
+
+/* ════════════════════════════════
+   DESIGN DECISION CARDS
+════════════════════════════════ */
+.design-cards { margin: 2mm 0; }
+.design-card {
+  display: grid;
+  grid-template-columns: 30mm 1fr;
+  margin-bottom: 2mm;
+  border: 0.5px solid var(--border);
+  overflow: hidden;
+  border-radius: 4px;
+  page-break-inside: avoid;
+}
+.dc-title {
+  background: var(--bg-blue);
+  padding: 5mm 4mm;
+  font-size: 7.5pt;
+  font-weight: 700;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+}
+.dc-body {
+  background: var(--bg);
+  padding: 5mm;
+  font-size: 7.5pt;
+  color: var(--sub);
+  line-height: 1.5;
+}
+
+/* ════════════════════════════════
+   MODULE TABLE
+════════════════════════════════ */
+.module-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 7.5pt;
+  margin: 2mm 0;
+}
+.module-table th {
+  background: #0F1923;
+  color: #90b8d8;
+  padding: 3mm 4mm;
+  text-align: left;
+  font-weight: 600;
+  font-size: 6.5pt;
+}
+.module-table td {
+  padding: 3mm 4mm;
+  border-bottom: 0.5px solid var(--border);
+  vertical-align: top;
+}
+.module-table tr:nth-child(even) td { background: var(--bg); }
+.module-table tr:nth-child(odd)  td { background: #fff; }
+.mod-key   { color: var(--accent); font-size: 6.5pt; font-weight: 600; }
+.mod-cn    { font-weight: 700; color: var(--text); }
+.mod-desc  { color: var(--sub); }
+
+/* ════════════════════════════════
+   THREE-LENS
+════════════════════════════════ */
+.lens-cards { margin: 2mm 0; }
+.lens-card {
+  display: grid;
+  grid-template-columns: 13mm 33mm 1fr;
+  margin-bottom: 2mm;
+  border: 0.5px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  page-break-inside: avoid;
+}
+.lens-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9pt;
+  font-weight: 800;
+  color: #fff;
+  padding: 4mm 0;
+}
+.lens-title-col {
+  background: var(--bg);
+  padding: 4mm;
+  display: flex;
+  align-items: center;
+  font-size: 7.5pt;
+  font-weight: 700;
+  color: var(--text);
+  border-right: 0.5px solid var(--border);
+}
+.lens-body {
+  padding: 4mm 5mm;
+  font-size: 7.5pt;
+  color: var(--sub);
+  line-height: 1.5;
+  background: #fff;
+}
+
+/* ════════════════════════════════
+   SHOT TABLE
+════════════════════════════════ */
+.shot-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 7pt;
+  margin: 2mm 0;
+  page-break-inside: avoid;
+}
+.shot-table th {
+  background: #0F1923;
+  color: #90b8d8;
+  padding: 2.5mm 3mm;
+  text-align: left;
+  font-size: 6.5pt;
+  font-weight: 600;
+}
+.shot-table td {
+  padding: 3mm;
+  border-bottom: 0.5px solid var(--border);
+  vertical-align: top;
+  line-height: 1.4;
+}
+.shot-table tr:nth-child(even) td { background: var(--bg); }
+.shot-table .cta-cell { background: #f0fff4 !important; color: #276749; font-weight: 700; }
+.shot-table .ts { color: var(--accent); font-weight: 700; white-space: nowrap; }
+
+/* ════════════════════════════════
+   CHALLENGE CARDS
+════════════════════════════════ */
+.challenge-card {
+  border: 0.5px solid var(--border);
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 4mm;
+  page-break-inside: avoid;
+}
+.ch-header {
+  display: flex;
+  align-items: center;
+  gap: 3mm;
+  padding: 3.5mm 5mm;
+  border-top: 3px solid;
+}
+.ch-header.blue   { border-color: var(--accent);  background: var(--bg-blue); }
+.ch-header.purple { border-color: var(--accent2); background: #f5f0ff; }
+.ch-header.teal   { border-color: var(--teal);    background: #f0fffd; }
+.ch-num {
+  font-size: 13pt;
+  font-weight: 800;
+  line-height: 1;
+}
+.ch-header.blue   .ch-num { color: var(--accent); }
+.ch-header.purple .ch-num { color: var(--accent2); }
+.ch-header.teal   .ch-num { color: var(--teal); }
+.ch-title { font-size: 8pt; font-weight: 700; color: var(--text); }
+.ch-body { padding: 4mm 5mm; background: var(--bg); }
+.ch-section { margin-bottom: 2.5mm; }
+.ch-section .label {
+  font-size: 6.5pt;
+  font-weight: 700;
+  color: var(--light);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1mm;
+}
+.ch-section p { font-size: 7.5pt; color: var(--sub); line-height: 1.5; }
+.ch-principle {
+  background: #fffbeb;
+  border-top: 1.5px solid #ecc94b;
+  padding: 3mm 5mm;
+  font-size: 7.5pt;
+  color: #744210;
+  line-height: 1.5;
+}
+.ch-principle::before { content: "💡 "; }
+
+/* ════════════════════════════════
+   CASE 2 CARDS
+════════════════════════════════ */
+.case2-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3mm;
+  margin: 2mm 0;
+}
+.case2-card {
+  border: 0.5px solid var(--border);
+  border-top: 2px solid var(--accent2);
+  border-radius: 0 0 4px 4px;
+  padding: 4mm 5mm;
+  background: var(--bg);
+  page-break-inside: avoid;
+}
+.case2-card h4 {
+  font-size: 8pt;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 2mm;
+}
+.case2-card p { font-size: 7.5pt; color: var(--sub); line-height: 1.5; }
+
+/* ════════════════════════════════
+   PRINCIPLES
+════════════════════════════════ */
+.principle-card {
+  display: grid;
+  grid-template-columns: 11mm 1fr auto;
+  border: 0.5px solid var(--border);
+  border-radius: 4px;
+  margin-bottom: 2.5mm;
+  overflow: hidden;
+  page-break-inside: avoid;
+}
+.pc-code {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-blue);
+  font-size: 10pt;
+  font-weight: 800;
+  color: var(--accent);
+  border-right: 0.5px solid var(--border);
+}
+.pc-body { padding: 4mm 5mm; background: #fff; }
+.pc-body h4 { font-size: 8.5pt; font-weight: 700; color: var(--text); margin-bottom: 1.5mm; }
+.pc-body p  { font-size: 7.5pt; color: var(--sub); line-height: 1.5; }
+.pc-tag {
+  padding: 3mm 4mm;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  font-size: 6.5pt;
+  color: var(--teal);
+  font-weight: 600;
+  border-left: 0.5px solid var(--border);
+  text-align: right;
+  min-width: 32mm;
+  max-width: 40mm;
+  line-height: 1.4;
+}
+
+/* ════════════════════════════════
+   CLOSING STATEMENT
+════════════════════════════════ */
+.closing {
+  background: var(--bg-blue);
+  border-top: 3px solid var(--accent);
+  border-radius: 0 0 5px 5px;
+  padding: 6mm 7mm;
+  margin-top: 5mm;
+  font-size: 8.5pt;
+  color: var(--sub);
+  line-height: 1.6;
+}
+.closing strong { color: var(--text); }
+
+hr.divider {
+  border: none;
+  border-top: 0.5px solid var(--border);
+  margin: 5mm 0;
+}
+
+.caption { font-size: 6.5pt; color: var(--light); margin-top: 1.5mm; line-height: 1.4; }
+.body-text { font-size: 8pt; color: var(--sub); line-height: 1.55; margin: 2mm 0; }
+
+</style>
+</head>
+<body>
+
+<!-- ════════════ HERO ════════════ -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">AI 业务流程优化 · 核心作品集</div>
+    <h1>CreatorOps AI</h1>
+    <div class="hero-sub">达人商业化复盘智能体 · 全栈工程案例</div>
+    <div class="hero-accent-bar"></div>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="label">平台</span>
+        <span class="val">Coze Agent Platform</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="label">架构</span>
+        <span class="val">双工作流 · 7节点串并联</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="label">模型</span>
+        <span class="val">GPT-4o · Gemini 2.0 Flash</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="label">场景</span>
+        <span class="val">达人建联 + 短视频复盘</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="label">账号类型</span>
+        <span class="val">MCN 达人 + 品牌自营账号</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ STAR ════════════ -->
+<div class="section-header" style="margin-top:6mm">
+  <div class="bar blue"></div>
+  <div class="titles">
+    <h2>项目概览</h2>
+    <div class="sub-title">背景 · 挑战 · 行动 · 结果（STAR 框架）</div>
+  </div>
+</div>
+
+<div class="star-grid">
+  <div class="star-card s no-break">
+    <div class="card-title"><span class="letter">S</span>背景</div>
+    <p>在 MCN 跨境达人带货生态中，TikTok 小店的素材测品与达人筛选全程依赖人工。团队同时运营<strong>达人建联</strong>与<strong>短视频内容</strong>两大业务线，服务 MCN 旗下腰尾部达人及品牌自营账号，复盘效率成为规模化瓶颈。</p>
+  </div>
+  <div class="star-card t no-break">
+    <div class="card-title"><span class="letter">T</span>挑战</div>
+    <p>单条素材人工复盘耗时长达 <strong>30 分钟</strong>；腰尾部达人因缺乏专业策略指导，转化率极低，大量测品素材成本沉没。团队亟需一套可复用、可扩展的 AI 分析基础设施。</p>
+  </div>
+  <div class="star-card a no-break">
+    <div class="card-title"><span class="letter">A</span>行动</div>
+    <p>基于 Coze 平台，独立设计并搭建 CreatorOps AI——一套由 <strong>Agent 前台意图路由</strong> + <strong>双工作流后台</strong>构成的达人商业化复盘系统，覆盖达人建档与素材诊断全链路，支持自营账号与 MCN 达人双向接入。</p>
+  </div>
+  <div class="star-card r no-break">
+    <div class="card-title"><span class="letter">R</span>结果</div>
+    <p>单条复盘耗时从 30 分钟压缩至 <strong>5 分钟以内</strong>，效率提升 83%。输出促单漏斗分析与导演级拍摄通告单，大部分接受策略建议并重新发布的达人播放量均有提升，多支视频完成销售 <strong>0→1 首单突破</strong>。</p>
+  </div>
+</div>
+
+<!-- Metrics -->
+<div class="section-header">
+  <div class="bar teal"></div>
+  <div class="titles"><h2>量化成果</h2></div>
+</div>
+<div class="metrics-row">
+  <div class="metric-card">
+    <div class="value">83%</div>
+    <div class="mlabel">复盘效率提升</div>
+  </div>
+  <div class="metric-card">
+    <div class="value" style="font-size:11pt">30min→5min</div>
+    <div class="mlabel">单条耗时压缩</div>
+  </div>
+  <div class="metric-card">
+    <div class="value">0→1</div>
+    <div class="mlabel">首单突破达成</div>
+  </div>
+  <div class="metric-card">
+    <div class="value" style="font-size:11pt">2条业务线</div>
+    <div class="mlabel">达人建联 + 短视频</div>
+  </div>
+</div>
+
+<!-- ════════════ PAGE 2: ARCHITECTURE ════════════ -->
+<div class="page-break"></div>
+
+<div class="section-header">
+  <div class="bar blue"></div>
+  <div class="titles">
+    <h2>系统架构设计</h2>
+    <div class="sub-title">Agent 前台意图路由层 + 双工作流后台执行层</div>
+  </div>
+</div>
+
+<p class="body-text">CreatorOps AI 采用「<strong>前台大堂经理 + 后台专家工作流</strong>」两层架构。Agent 前台负责意图识别、附件完整性校验与工作流路由；两条后台工作流各司其职，实现达人数字资产建档与素材转化诊断的全自动化。</p>
+
+<div class="section-header" style="margin-top:4mm">
+  <div class="bar blue"></div>
+  <div class="titles"><h2 style="font-size:9pt">Agent 前台：三层意图路由引擎</h2></div>
+</div>
+
+<div class="workflow">
+  <div class="wf-row">
+    <div class="wf-node n-dark" style="min-width:50mm">用户输入
+      <span class="node-sub">文本指令 / 图片附件 / 视频素材</span>
+    </div>
+  </div>
+  <div class="wf-arrow-v">↓</div>
+  <div class="wf-row">
+    <div class="wf-node n-blue">第一层<br>精确指令匹配
+      <span class="node-sub">新手引导 | 快捷指令按钮</span>
+    </div>
+    <div class="wf-arrow-h">→</div>
+    <div class="wf-node n-purple">第二层<br>动作意图识别
+      <span class="node-sub">「建档」「复盘」意图解析</span>
+    </div>
+    <div class="wf-arrow-h">→</div>
+    <div class="wf-node n-green">第三层<br>附件上下文接力
+      <span class="node-sub">状态记忆 | 防复读机制</span>
+    </div>
+  </div>
+  <div class="wf-arrow-v">↓</div>
+  <div class="wf-row">
+    <div class="wf-node n-orange">布尔值附件校验
+      <span class="node-sub">has_image · has_video</span>
+    </div>
+    <div class="wf-arrow-h">→</div>
+    <div class="wf-node n-red">阻断 / 待机模式
+      <span class="node-sub">物料不完整时拦截</span>
+    </div>
+    <div class="wf-arrow-h">→</div>
+    <div class="wf-node n-green">静默传参执行
+      <span class="node-sub">Zero-Text Invocation</span>
+    </div>
+  </div>
+  <div class="wf-arrow-v">↓</div>
+  <div class="wf-row">
+    <div class="wf-node n-blue">路由至 creator_dossier_v1
+      <span class="node-sub">达人建档工作流</span>
+    </div>
+    <div class="wf-arrow-h" style="color:transparent">→</div>
+    <div class="wf-node n-purple">路由至 content_diagnostic_v1
+      <span class="node-sub">素材诊断工作流</span>
+    </div>
+  </div>
+</div>
+
+<div class="section-header" style="margin-top:4mm">
+  <div class="bar blue"></div>
+  <div class="titles"><h2 style="font-size:9pt">关键设计决策</h2></div>
+</div>
+<div class="design-cards">
+  <div class="design-card">
+    <div class="dc-title">布尔值<br>附件校验</div>
+    <div class="dc-body">Gemini 2.0 Flash 在精确计数图片数量时会消耗大量 Token 并引发逻辑崩溃（已在生产环境实测触发）。改用布尔值判断（has_image / has_video），彻底绕开精确计数，这是从生产事故中提炼的<strong>原创工程解法</strong>。</div>
+  </div>
+  <div class="design-card">
+    <div class="dc-title">九条<br>系统级红线</div>
+    <div class="dc-body">Agent 被明确限定为「大堂经理」角色，设置 9 条绝对约束：禁止手写 JSON、禁止越权分析、<strong>单次执行锁</strong>（禁止重复调用工作流）、<strong>Zero-Text Invocation</strong>（工作流触发前禁止输出任何过渡文本）。</div>
+  </div>
+</div>
+
+<!-- ════════════ PAGE 3: WORKFLOW 1 ════════════ -->
+<div class="page-break"></div>
+
+<div class="section-header">
+  <div class="bar blue"></div>
+  <div class="titles">
+    <h2>工作流 01 · creator_dossier_v1</h2>
+    <div class="sub-title">达人全景档案自动化建档系统</div>
+  </div>
+</div>
+
+<p class="body-text">接收达人主页截图、后台数据截图（4张）及爆款视频，通过多模型并行解析，自动输出结构化 JSON 数字档案与 Markdown 可读版战报，建立可供后续素材诊断复用的达人基准数据资产。</p>
+
+<div class="workflow">
+  <div class="wf-row">
+    <div class="wf-node n-dark" style="min-width:60mm">Start
+      <span class="node-sub">主页截图 + 后台数据图(×4) + 爆款视频</span>
+    </div>
+  </div>
+  <div class="wf-arrow-v">↓ 并行触发</div>
+  <div class="wf-row">
+    <div class="wf-node n-blue">LLM_B<br>后台数据录入
+      <span class="node-sub">Gemini 2.0 Flash</span>
+    </div>
+    <div class="wf-arrow-h" style="color:transparent">·</div>
+    <div class="wf-node n-blue">LLM_C<br>主页数据分析
+      <span class="node-sub">Gemini 2.0 Flash</span>
+    </div>
+    <div class="wf-arrow-h" style="color:transparent">·</div>
+    <div class="wf-node n-blue">LLM_D<br>爆款视频拉片
+      <span class="node-sub">Gemini 2.0 Flash</span>
+    </div>
+    <div class="wf-arrow-h" style="color:transparent">·</div>
+    <div class="wf-node n-dark">Get_Current_Time
+      <span class="node-sub">时间戳注入</span>
+    </div>
+  </div>
+  <div class="wf-arrow-v">↓ 聚合</div>
+  <div class="wf-row">
+    <div class="wf-node n-purple" style="min-width:55mm">LLM_E 首次建档
+      <span class="node-sub">GPT-4o · 聚合 JSON 输出 · 8模块结构化档案</span>
+    </div>
+  </div>
+  <div class="wf-arrow-v">↓</div>
+  <div class="wf-row">
+    <div class="wf-node n-teal" style="min-width:55mm">LLM_F JSON翻译
+      <span class="node-sub">GPT-4o mini · Markdown 可读版渲染</span>
+    </div>
+  </div>
+  <div class="wf-arrow-v">↓</div>
+  <div class="wf-row">
+    <div class="wf-node n-green" style="min-width:60mm">End
+      <span class="node-sub">dossier_json（JSON可复用版）+ dossier_markdown（可读版）</span>
+    </div>
+  </div>
+</div>
+
+<div class="section-header" style="margin-top:4mm">
+  <div class="bar blue"></div>
+  <div class="titles"><h2 style="font-size:9pt">核心节点设计亮点</h2></div>
+</div>
+<div class="node-details">
+  <div class="node-detail-row">
+    <div class="nd-label">并行多模态<br>解析层<br>LLM_B · C · D</div>
+    <div class="nd-body">三节点并发触发，Gemini 2.0 Flash 同步处理截图（图像理解）与视频（帧级拉片），各节点独立输出 JSON，消除串行等待时延。<strong>多模型选型原因</strong>：Gemini 2.0 Flash 原生支持视频与多图理解，成本低于 GPT-4o 的多模态调用，适合大批量附件解析任务。</div>
+  </div>
+  <div class="node-detail-row">
+    <div class="nd-label purple">聚合建档节点<br>LLM_E<br>首次建档</div>
+    <div class="nd-body">GPT-4o 接收三路 JSON 情报，按<strong>严格字段映射规则（8条）</strong>聚合输出标准化 dossier_json，含受众画像、视觉 DNA、爆款公式、迭代日志等 8 大模块。<br><strong>致命错误熔断协议</strong>：任意上游节点报错，立即瘫痪并透传错误，禁止编造「N/A」或「待补充」占位数据——这是防止幻觉数据被「合法化」的核心防线。</div>
+  </div>
+  <div class="node-detail-row">
+    <div class="nd-label teal">格式转换层<br>LLM_F<br>JSON翻译</div>
+    <div class="nd-body">GPT-4o mini 将结构化 JSON 渲染为 Markdown 可读版战报。<strong>双格式输出设计</strong>：JSON 供后续工作流（content_diagnostic）直接作为 history_dossier 输入，Markdown 供运营人员直接阅读——一次生成，工程复用与人工阅读两不误。</div>
+  </div>
+</div>
+
+<div class="section-header" style="margin-top:4mm">
+  <div class="bar blue"></div>
+  <div class="titles"><h2 style="font-size:9pt">输出数据结构 · dossier_json（8大模块）</h2></div>
+</div>
+<table class="module-table">
+  <thead>
+    <tr>
+      <th style="width:20mm">模块键名</th>
+      <th style="width:20mm">中文名称</th>
+      <th>核心字段</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td class="mod-key">module_01_audience</td><td class="mod-cn">受众画像</td><td class="mod-desc">核心年龄层 / 性别比 / 地区分布 / 推断兴趣标签</td></tr>
+    <tr><td class="mod-key">module_02_visual_dna</td><td class="mod-cn">视觉 DNA</td><td class="mod-desc">色调场景 / 剪辑节奏 / 镜头语言 / 一致性评分</td></tr>
+    <tr><td class="mod-key">module_03_positioning</td><td class="mod-cn">账号定位</td><td class="mod-desc">内容类目 / 差异化标签 / 合成人设 / 主页漏斗强度</td></tr>
+    <tr><td class="mod-key">module_04_viral_dna</td><td class="mod-cn">爆款基因</td><td class="mod-desc">开篇类型 / 叙事节奏 / CTA 策略 / 可复制公式(×2)</td></tr>
+    <tr><td class="mod-key">module_05_performance</td><td class="mod-cn">数据基线</td><td class="mod-desc">均播放 / 均完播率 / 均互动率 / TOP3 爆款历史记录</td></tr>
+    <tr><td class="mod-key">module_06_strengths</td><td class="mod-cn">可杠杆优势</td><td class="mod-desc">可直接利用的内容优势或达人个人优势点</td></tr>
+    <tr><td class="mod-key">module_07_risks</td><td class="mod-cn">已知风险</td><td class="mod-desc">历史复盘中识别的内容稳定性风险因子</td></tr>
+    <tr><td class="mod-key">module_08_iteration_log</td><td class="mod-cn">迭代日志</td><td class="mod-desc">当前状态快照 / 下一步测试变量建议</td></tr>
+  </tbody>
+</table>
+
+<!-- ════════════ PAGE 4: WORKFLOW 2 ════════════ -->
+<div class="page-break"></div>
+
+<div class="section-header">
+  <div class="bar purple"></div>
+  <div class="titles">
+    <h2>工作流 02 · content_diagnostic_v1</h2>
+    <div class="sub-title">素材转化漏斗诊断 + 导演级逐秒拍摄通告单生成</div>
+  </div>
+</div>
+
+<p class="body-text">接收达人历史档案 JSON、测品 SKU、数据截图及素材视频，通过三镜头交叉归因诊断，定位转化漏斗断裂点，输出优先级行动方案与逐秒分镜通告单，指导达人重拍或策略调整。</p>
+
+<div class="workflow">
+  <div class="wf-row">
+    <div class="wf-node n-dark" style="min-width:65mm">Start
+      <span class="node-sub">历史档案 JSON + 测品 SKU + 数据截图(×2) + 素材视频</span>
+    </div>
+  </div>
+  <div class="wf-arrow-v">↓ 并行触发</div>
+  <div class="wf-row">
+    <div class="wf-node n-blue">LLM_A<br>新素材拉片
+      <span class="node-sub">Gemini 2.0 Flash</span>
+    </div>
+    <div class="wf-arrow-h" style="color:transparent">·</div>
+    <div class="wf-node n-blue">LLM_B<br>数据截图抓取
+      <span class="node-sub">Gemini 2.0 Flash</span>
+    </div>
+    <div class="wf-arrow-h" style="color:transparent">·</div>
+    <div class="wf-node n-dark">Get_Current_Time
+      <span class="node-sub">时间戳</span>
+    </div>
+  </div>
+  <div class="wf-arrow-v">↓</div>
+  <div class="wf-row">
+    <div class="wf-node n-purple" style="min-width:60mm">LLM_C 数据分析
+      <span class="node-sub">GPT-4o · 三镜头交叉归因诊断</span>
+    </div>
+  </div>
+  <div class="wf-arrow-v">↓</div>
+  <div class="wf-row">
+    <div class="wf-node n-purple" style="min-width:60mm">LLM_D 优化策略
+      <span class="node-sub">GPT-4o · 导演级逐秒拍摄通告单</span>
+    </div>
+  </div>
+  <div class="wf-arrow-v">↓</div>
+  <div class="wf-row">
+    <div class="wf-node n-orange" style="min-width:60mm">LLM_E 达人建议
+      <span class="node-sub">GPT-4o mini · 个性化私信文案生成</span>
+    </div>
+  </div>
+  <div class="wf-arrow-v">↓ 并行</div>
+  <div class="wf-row">
+    <div class="wf-node n-green">LLM_F 档案迭代
+      <span class="node-sub">GPT-4o · updated_dossier_json</span>
+    </div>
+    <div class="wf-arrow-h" style="color:transparent">·</div>
+    <div class="wf-node n-teal">LLM_G 翻译JSON
+      <span class="node-sub">GPT-4o mini · Markdown</span>
+    </div>
+  </div>
+  <div class="wf-arrow-v">↓</div>
+  <div class="wf-row">
+    <div class="wf-node n-green" style="min-width:65mm">End
+      <span class="node-sub">诊断报告 + 拍摄通告单 + 私信文案 + 更新版档案</span>
+    </div>
+  </div>
+</div>
+
+<div class="section-header" style="margin-top:4mm">
+  <div class="bar purple"></div>
+  <div class="titles"><h2 style="font-size:9pt">LLM_C · 三镜头交叉归因诊断框架</h2></div>
+</div>
+
+<div class="lens-cards">
+  <div class="lens-card">
+    <div class="lens-num" style="background:var(--accent)">L1</div>
+    <div class="lens-title-col">产品—受众<br>契合度分析</div>
+    <div class="lens-body">将产品 SKU 特征与历史档案受众画像（年龄、性别比、兴趣标签、地区）交叉比对，输出 <strong>1-10 分契合度评分</strong>与「受众真实需求」判断，决定是否值得重拍同款产品。<br><em>示例：「受众 53.7% 为 45-54 岁男性，偏好汽车工具；产品为宗教银饰——类目、语言、文化框架三重错位，fit_score=2」</em></div>
+  </div>
+  <div class="lens-card">
+    <div class="lens-num" style="background:var(--accent2)">L2</div>
+    <div class="lens-title-col">行动级<br>转化归因</div>
+    <div class="lens-body">若有留存曲线数据，精确到秒定位流失节点对应的创作者行为；若无留存数据，以<strong>内容缺口（fatal_content_gaps）</strong>与漏斗零转化确认为主要信号，识别 CTA 缺失等关键失败原因。<br><em>示例：「第 0:19 秒创作者停止说话并转移视线，40% 观众在此流失，且后续 10 秒内无购物车引导动作」</em></div>
+  </div>
+  <div class="lens-card">
+    <div class="lens-num" style="background:var(--teal)">L3</div>
+    <div class="lens-title-col">历史爆款<br>公式偏差</div>
+    <div class="lens-body">将本次素材的视觉风格、开篇方式、CTA 手法与历史档案爆款基因（module_04）对比，量化<strong>偏差分数（1-10）</strong>并列举 deviations_found 数组。<br><em>示例：「历史爆款公式为「产品最优特性+限时报价直陈」；本次开篇为礼盒拆箱无价格信息——100% 偏离成功公式」</em></div>
+  </div>
+</div>
+
+<div class="section-header" style="margin-top:4mm">
+  <div class="bar purple"></div>
+  <div class="titles"><h2 style="font-size:9pt">LLM_D · 导演级拍摄通告单（输出示例节选）</h2></div>
+</div>
+
+<table class="shot-table">
+  <thead>
+    <tr>
+      <th style="width:16mm">秒数</th>
+      <th style="width:28mm">镜头动作</th>
+      <th>口播台词（含情绪标注）</th>
+      <th style="width:20mm">转化功能</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="ts">0:00–0:03</td>
+      <td>极近景，右手充满画面，戒指清晰可见，缓缓旋转</td>
+      <td>「我出门干活，这个从不摘。」<br><em>【语速慢，不解释，3秒内不动镜头，制造悬念】</em></td>
+      <td><strong>Hook</strong></td>
+    </tr>
+    <tr>
+      <td class="ts">0:03–0:08</td>
+      <td>中景切入，正对镜头，背景为车或工具</td>
+      <td>「三年了，没出过一次事——」<br><em>【停顿0.5秒，抬头直视镜头】</em></td>
+      <td>信任建立</td>
+    </tr>
+    <tr>
+      <td class="ts">0:08–0:15</td>
+      <td>极近景慢推，产品放掌心，轻微推进</td>
+      <td>「圣本笃戒指。几百年的传承，不是迷信。」<br><em>【平静，像讲给老朋友听，食指轻触纹路细节】</em></td>
+      <td>产品演示</td>
+    </tr>
+    <tr>
+      <td class="ts">0:15–0:21</td>
+      <td>中景，举起戒指与手写价格便条同时入镜</td>
+      <td>「现在才$X，你直接去抢吧。」<br><em>【轻笑放松，头微摇表示「便宜到不可思议」】</em></td>
+      <td>价格锚点</td>
+    </tr>
+    <tr>
+      <td class="ts">0:21–0:28</td>
+      <td>中景，直视镜头，表情突然认真</td>
+      <td>「点下面那个链接，就这一步。」<br><em>【语速突然加快，食指向下指，保持整整3秒】</em></td>
+      <td class="cta-cell">CTA ← 关键</td>
+    </tr>
+  </tbody>
+</table>
+<p class="caption">注：通告单精确至秒级，含镜头动作、逐字台词（情绪标注）、肢体动作与转化功能标注，达人可零问题直接执行拍摄。</p>
+
+<!-- ════════════ PAGE 5: CHALLENGES ════════════ -->
+<div class="page-break"></div>
+
+<div class="section-header">
+  <div class="bar teal"></div>
+  <div class="titles">
+    <h2>工程挑战与原创解法</h2>
+    <div class="sub-title">从生产事故中提炼的三个核心工程原则</div>
+  </div>
+</div>
+
+<div class="challenge-card no-break">
+  <div class="ch-header blue">
+    <span class="ch-num">#01</span>
+    <span class="ch-title">Token 熔断：多模态附件计数导致逻辑崩溃</span>
+  </div>
+  <div class="ch-body">
+    <div class="ch-section">
+      <div class="label">背景</div>
+      <p>Gemini 2.0 Flash 在被要求精确计数图片数量时，会陷入反复确认循环，消耗数万 Token 并最终引发逻辑漂移——这是在实际运行中<strong>真实触发的生产事故</strong>，而非理论推演。</p>
+    </div>
+    <div class="ch-section">
+      <div class="label">解法</div>
+      <p><strong>布尔值附件校验协议</strong>：改用 has_image / has_video 两个布尔值判断附件存在性，彻底绕开精确计数。Agent 只需知道「有没有」，数量清点交给后台工作流节点处理。</p>
+    </div>
+  </div>
+  <div class="ch-principle">「防止大模型做它不擅长的事」比「修复它做坏之后的结果」成本低 100 倍。识别 LLM 的能力边界并在架构层绕开，是 Agent 工程的核心竞争力。</div>
+</div>
+
+<div class="challenge-card no-break">
+  <div class="ch-header purple">
+    <span class="ch-num">#02</span>
+    <span class="ch-title">错误传染：下游节点对上游报错 JSON 继续「努力分析」</span>
+  </div>
+  <div class="ch-body">
+    <div class="ch-section">
+      <div class="label">背景</div>
+      <p>早期版本中，当上游节点返回 <code>{"status": "error"}</code> 时，下游 LLM 节点会将错误信息当成业务数据继续处理，输出一份充满幻觉的「分析报告」，且表面上格式完整、看起来合理。</p>
+    </div>
+    <div class="ch-section">
+      <div class="label">解法</div>
+      <p><strong>致命错误熔断协议（Fatal Error Circuit Breaker）</strong>：每个节点的 System Prompt 都设置前置核验规则——检测到 status:error 立即瘫痪，错误信息原样透传（透传链），禁止任何「待补充」或「N/A」占位编造。</p>
+    </div>
+  </div>
+  <div class="ch-principle">「错误状态的传染性」是多节点 LLM 工作流中最危险的隐性风险。必须在每个节点的入口处单独防御，而不是在最终输出端统一拦截——因为那时幻觉数据已经无法溯源。</div>
+</div>
+
+<div class="challenge-card no-break">
+  <div class="ch-header teal">
+    <span class="ch-num">#03</span>
+    <span class="ch-title">角色越权：前台 Agent 自行扮演后端 API 输出伪 JSON</span>
+  </div>
+  <div class="ch-body">
+    <div class="ch-section">
+      <div class="label">背景</div>
+      <p>Agent 在拦截用户请求时，会自发输出 <code>{"status": "error", "code": 403}</code> 等格式的 JSON 代码块——混淆前台拦截信息与后台工作流返回数据，导致前台排版逻辑误触发，产生跨场景逻辑漂移。</p>
+    </div>
+    <div class="ch-section">
+      <div class="label">解法</div>
+      <p><strong>身份锁定 + 终极输出禁令</strong>：用「大堂经理」角色约束 Agent 职责边界，系统级禁止前台输出任何 JSON 结构；同时设置 <strong>Zero-Text Invocation</strong>——工作流触发前禁止输出任何过渡文本，防止用户感知中间状态，也防止前台文本干扰后续渲染逻辑。</p>
+    </div>
+  </div>
+  <div class="ch-principle">清晰的角色边界不只是工程规范，更是防止 LLM 产生「跨场景逻辑漂移」的核心约束机制。越权的根源不是模型能力问题，而是 Prompt 设计时角色边界模糊。</div>
+</div>
+
+<!-- ════════════ CASE 2 ════════════ -->
+<div class="section-header" style="margin-top:6mm">
+  <div class="bar purple"></div>
+  <div class="titles">
+    <h2>延伸案例 · 通用 AI 指令集与工作流库</h2>
+    <div class="sub-title">将工程能力沉淀为可复用的团队组织资产</div>
+  </div>
+</div>
+
+<p class="body-text">在 CreatorOps AI 的工程实践基础上，将分散的 AI 使用经验系统化整理为结构化 Prompt 模板库，覆盖跨境电商全链路业务场景，赋能跨部门团队，降低 AI 使用门槛。</p>
+
+<div class="case2-grid">
+  <div class="case2-card">
+    <h4>📦 Listing 编写指令</h4>
+    <p>针对 TikTok Shop 与沃尔玛平台，结构化输出 SEO 优化标题、五点描述与 A+ 内容，含竞品差异化占位指令，统一输出格式减少人工修改成本。</p>
+  </div>
+  <div class="case2-card">
+    <h4>💬 客服回复模板</h4>
+    <p>覆盖退款、差评、物流异常等高频场景，AI 自动判断情绪级别并输出对应语气的回复，减少人工判断成本，保证跨境客服的语言一致性。</p>
+  </div>
+  <div class="case2-card">
+    <h4>🤝 达人建联话术库</h4>
+    <p>按达人粉丝量级（头/腰/尾部）与内容类目（美妆/家居/饰品）分类的个性化建联脚本，将 creator_dossier 洞察转化为可直发的建联话术，提升回复率。</p>
+  </div>
+  <div class="case2-card">
+    <h4>🎬 轻量素材分析指令</h4>
+    <p>将 content_diagnostic 的三镜头诊断逻辑提炼为轻量 Prompt，供运营人员在无 Agent 平台时直接调用，<strong>跨部门赋能短视频团队</strong>，降低 AI 工具使用门槛。</p>
+  </div>
+</div>
+
+<!-- ════════════ PAGE 6: METHODOLOGY ════════════ -->
+<div class="page-break"></div>
+
+<div class="section-header">
+  <div class="bar green"></div>
+  <div class="titles">
+    <h2>AI 工程方法论总结</h2>
+    <div class="sub-title">从 CreatorOps AI 提炼的 5 条可迁移系统设计原则</div>
+  </div>
+</div>
+
+<p class="body-text">以下原则提炼自完整的搭建历程——包括设计决策、生产事故与迭代修复——适用于所有基于 LLM 工作流的 AI 业务系统设计。</p>
+
+<div style="margin:3mm 0">
+
+  <div class="principle-card">
+    <div class="pc-code">P1</div>
+    <div class="pc-body">
+      <h4>防御性输入设计</h4>
+      <p>在输入层就阻止大模型做它不擅长的事。布尔值替代精确计数，意图分层替代模糊语义理解，附件类型隔离替代混传。问题越早被拦截，修复成本越低。</p>
+    </div>
+    <div class="pc-tag">减少 Token 消耗<br>防止逻辑漂移</div>
+  </div>
+
+  <div class="principle-card">
+    <div class="pc-code">P2</div>
+    <div class="pc-body">
+      <h4>错误熔断透传原则</h4>
+      <p>多节点工作流中，错误状态必须在每个节点入口处独立检测，检测到后立即停止并原样透传。绝不允许下游节点对错误数据进行「积极分析」，这是幻觉数据在链路中扩散的根源。</p>
+    </div>
+    <div class="pc-tag">防止幻觉数据<br>在链路中扩散</div>
+  </div>
+
+  <div class="principle-card">
+    <div class="pc-code">P3</div>
+    <div class="pc-body">
+      <h4>角色边界锁定</h4>
+      <p>Agent 前台的职责只有一个：路由。分析、判断、生成全部交给后台工作流节点。清晰的角色边界是防止跨场景逻辑漂移的核心约束机制，也是系统排障时的关键依据。</p>
+    </div>
+    <div class="pc-tag">提升系统可预测性<br>便于问题溯源</div>
+  </div>
+
+  <div class="principle-card">
+    <div class="pc-code">P4</div>
+    <div class="pc-body">
+      <h4>多模型异构编排</h4>
+      <p>不同节点根据任务性质选择最合适的模型：Gemini 2.0 Flash 处理多模态解析，GPT-4o 负责复杂推理与结构化输出，GPT-4o mini 处理格式转换——在质量与成本之间实现工程级权衡，而不是一律用最贵的模型。</p>
+    </div>
+    <div class="pc-tag">降本增效<br>质量与成本平衡</div>
+  </div>
+
+  <div class="principle-card">
+    <div class="pc-code">P5</div>
+    <div class="pc-body">
+      <h4>业务规则代码化</h4>
+      <p>将运营规则、合规约束、输出格式要求全部写入 System Prompt 的「绝对红线」，而不是依赖大模型的泛化理解。规则越明确，系统越稳定，幻觉风险越低，维护成本越可控。</p>
+    </div>
+    <div class="pc-tag">提升可维护性<br>降低幻觉风险</div>
+  </div>
+
+</div>
+
+<hr class="divider">
+
+<div class="closing">
+  CreatorOps AI 是一次从业务痛点出发、用工程方法解决规模化问题的完整实践。从最初的单次手工复盘，到可服务任意数量达人的自动化 AI 基础设施，核心能力在于：<strong>将复杂业务逻辑转化为可运行、可维护、可扩展的 AI Agent 系统。</strong><br><br>
+  这套系统目前仍在持续迭代——下一步计划接入达人数据库，实现历史档案的自动检索与批量更新，将「单达人操作」升级为「规模化达人资产管理」。
+</div>
+
+</body>
+</html>
